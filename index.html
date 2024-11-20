@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="element1">Hello World!!</div>
+
+    <button id="myButton">Click Here!</button>
+    
+    <script>
+        const arr = [1, 2, 3, "Hello CENextGen", true, false];
+
+        const el = document.getElementById("element1");
+
+        el.innerText = "Hello CENextGen";
+
+        const new_el = document.createElement("div");
+
+        new_el.innerText = "CE NextGen 2";
+
+        console.log(new_el);
+
+        el.appendChild(new_el);
+
+        const ul_el = document.createElement("ul");
+
+        for (const item of arr) {
+            const li_el = document.createElement("li");
+            li_el.innerText = item;
+            ul_el.appendChild(li_el);
+            li_el.style.color = "yellow";
+        }
+
+        el.appendChild(ul_el);
+
+        ul_el.style.background = "green";
+
+        const myButton = document.getElementById("myButton");
+
+        let state = true;
+
+        myButton.addEventListener("click", function() {
+            if (state == true){
+                ul_el.style.background = "pink";
+                state = false;
+            }
+            else {
+                ul_el.style.background = "green";
+                state = true;
+            }
+        })
+    </script>
+</body>
+</html>
